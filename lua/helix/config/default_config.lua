@@ -1,0 +1,37 @@
+return {
+	editor = {
+		scrolloff = 5,
+		mouse = true,
+		["middle-click-paste"] = true,
+		["scroll-lines"] = 3,
+		shell = {"sh", "-c"},
+		["line-number"] = "absolute",
+		cursorline = false,
+		cursorcolumn = false,
+		gutters = {"diagnostics", "spacer", "line-numbers", "spacer", "diff"},
+		["auto-completion"] = true,
+		["auto-format"] = true,
+		["auto-save"] = true,
+		["idle-timeout"] = true,
+		["preview-completion-insert"] = true,
+		["completion-trigger-len"] = 2,
+		["completion-replace"] = false,
+		["auto-info"] = true,
+		["true-color"] = false,
+		["undercurl"] = false,
+		["rulers"] = {},
+		bufferline = "never",
+		["color-modes"] = false,
+		["text-width"] = 80,
+		["workspace-lsp-roots"] = {},
+		["default-line-ending"] = "native",
+		["insert-final-newline"] = true,
+		["soft-wrap"] = {
+			enable = false,
+			["max-wrap"] = 20,
+			["max-indent-retain"] = 40,
+			["wrap-indicator"] = '↪',
+			["wrap-at-text-width"] = false
+		}
+	},
+}
