@@ -1,5 +1,3 @@
-
-
 local Notify = {}
 
 Notify.error = function (message)
@@ -7,6 +5,5 @@ Notify.error = function (message)
 			title = "Helix"
 	})
 end
-
 
 return Notify

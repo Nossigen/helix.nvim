@@ -14,14 +14,14 @@
 
 | Configuration key           | Working | Comment                                                                     |
 | --------------------------- | ------- | --------------------------------------------------------------------------- |
-| `scrolloff`                 | No      |                                                                             |
+| `scrolloff`                 | Yes     |                                                                             |
 | `mouse`                     | Yes     | Need testing                                                                |
 | `middle-click-paste`        | No      |                                                                             |
 | `scroll-lines`              | No      |                                                                             |
 | `shell`                     | No      |                                                                             |
-| `line-number`               | Yes     | Highlighting is not accurate, insert is not accurate too, gitsign at the wrong position |
-| `cursorline`                | No      |                                                                             |
-| `cursorcolumn`              | No      |                                                                             |
+| `line-number`               | Yes     | Gitsign at the wrong position                                               |
+| `cursorline`                | Yes     |                                                                             |
+| `cursorcolumn`              | Yes     |                                                                             |
 | `gutters`                   | No      |                                                                             |
 | `auto-completion`           | No      |                                                                             |
 | `auto-format`               | No      |                                                                             |
@@ -31,16 +31,38 @@
 | `completion-trigger-len`    | No      |                                                                             |
 | `completion-replace`        | No      |                                                                             |
 | `auto-info`                 | No      |                                                                             |
-| `true-color`                | No      |                                                                             |
+| `true-color`                | Yes     |                                                                             |
 | `undercurl`                 | No      |                                                                             |
-| `rulers`                    | No      |                                                                             |
+| `rulers`                    | Yes     |                                                                             |
 | `bufferline`                | No      |                                                                             |
 | `color-modes`               | No      |                                                                             |
 | `text-width`                | No      |                                                                             |
 | `workspace-lsp-roots`       | No      |                                                                             |
 | `default-line-ending`       | No      |                                                                             |
-| `insert-final-newline`      | No      |                                                                             |
- 
+| `insert-final-newline`      | No      | Always true                                                                             |
+
+#### Soft-wrap section
+
+> Refer to [documentation](https://docs.helix-editor.com/configuration.html#editorsoft-wrap-section)
+
+| Configuration key           | Working | Comment                                                                     |
+| --------------------------- | ------- | --------------------------------------------------------------------------- |
+| `enable`                    | Yes     |                                                                             |
+| `max-wrap`                  | No      |                                                                             |
+| `max-indent-retain`         | No      |                                                                             |
+| `wrap-indicator`            | No      |                                                                             |
+| `wrap-at-text-width`        | No      |                                                                             |
+
+#### Cursor-shape section
+
+> Refer to [documentation](https://docs.helix-editor.com/configuration.html#editorcursor-shape-section)
+
+| Configuration key           | Working | Comment                                                                     |
+| --------------------------- | ------- | --------------------------------------------------------------------------- |
+| `normal`                    | Yes     |                                                                             |
+| `insert`                    | Yes     |                                                                             |
+| `select`                    | Yes     |                                                                             |
+
 ### Commands
 
 Functions are available in lua through `helix.cmd`

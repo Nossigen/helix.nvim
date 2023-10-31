@@ -27,8 +27,9 @@ KeymapLoader.load = function ()
 	xmap('<', '<gv')
 	xmap('>', '>gv')
 
-	nmap('d', 'dl')
-	xmap('d', 'd')
+	nmap('d', function ()
+		helix.cmd.delete_selection()
+	end)
 
 	nmap('w', 've')
 	xmap('w', '<ESC>ve')
