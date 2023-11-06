@@ -1,0 +1,24 @@
+{
+  "settings": {
+    "Lua": {
+      "workspace": {
+        "library": [
+          "/nix/store/4wq4i3zfc9g0g5b0d94rm36d9pfa4fqz-neovim-unwrapped-0.9.4/share/nvim/runtime/lua/"
+        ],
+        "maxPreload": 2000,
+        "preloadFileSize": 1000
+      },
+      "runtime": {
+        "version": "Lua 5.4"
+      },
+      "diagnostics": {
+        "enable": true,
+        "globals": ["vim"],
+        "disable": ["lowercase-global"]
+      },
+      "completion": {
+        "keywordSnippet": "Disable"
+      }
+    }
+  }
+}

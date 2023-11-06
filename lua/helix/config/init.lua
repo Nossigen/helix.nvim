@@ -8,6 +8,8 @@ config.parse = function (raw_json_data)
 	
 	helix.config = vim.tbl_deep_extend("force", default_config, configuration)
 	editor_loader.load()
+	-- Add a space after the line
+	vim.opt.virtualedit = 'onemore'
 end
 
 return config

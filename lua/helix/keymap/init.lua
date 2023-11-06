@@ -1,38 +1,50 @@
 local KeymapLoader = {}
 
-KeymapLoader.load = function ()
-	xmap = function (mapping, action)
+local unload_vim_keymap = function ()
+	local unmap = vim.api.nvim_del_keymap
+
+	local mappings = vim.api.nvim_get_keymap('n')
+
+	for _, data in ipairs(mappings) do
+		vim.api.nvim_del_keymap('n', data.lhs)
+		-- print(vim.inspect(i))
+		-- print(vim.inspect(data))
+	end
+	
+	local mappings = vim.api.nvim_buf_get_keymap(0, 'n')
+
+	for _, data in ipairs(mappings) do
+		vim.api.nvim_buf_del_keymap(0, 'n', data.lhs)
+	end
+end
+local function load_helix_keymap()
+	-- Normal
+	local xmap = function (mapping, action)
 		vim.keymap.set('v', mapping, action, {noremap=true, silent=true})
 	end
 
-	nmap = function (mapping, action)
+	local nmap = function (mapping, action)
 		vim.keymap.set('n', mapping, action, {noremap=true, silent=true})
 	end
 
-	nmap('<C-c>', function()
-		helix.cmd.toggle_comments()
-	end)
-	xmap('<C-c>', function()
-		helix.cmd.toggle_comments()
-	end)
+	-- Goto
 
-	nmap('<leader>fF', function ()
-		helix.cmd.file_picker_in_current_directory()
-	end)
+	nmap('<C-c>', helix.cmd.toggle_comments)
+	xmap('<C-c>', helix.cmd.toggle_comments)
 
-	-- Normal
+	nmap('<leader>fF', helix.cmd.file_picker_in_current_directory)
+
 	nmap('<', 'v<')
 	nmap('>', 'v>')
 
 	xmap('<', '<gv')
 	xmap('>', '>gv')
 
-	nmap('d', function ()
-		helix.cmd.delete_selection()
-	end)
+	nmap('d', helix.cmd.delete_selection)
 
-	nmap('w', 've')
-	xmap('w', '<ESC>ve')
+	-- nmap('w', helix.cmd.move_next_word_start)
+	-- xmap('w', helix.cmd.move_next_word_start)
+	-- xmap('w', '<ESC>ve')
 
 	nmap('W', 'vE')
 	xmap('W', '<ESC>vE')
@@ -42,7 +54,7 @@ KeymapLoader.load = function ()
 
 	nmap('U', '<C-r>')
 
-	nmap('x', '$V')
+	nmap('x', helix.cmd.extend_line_below)
 	xmap('x', 'j')
 
 	--nmap('%', 'ggvge')
@@ -57,6 +69,11 @@ KeymapLoader.load = function ()
 	nmap('gh', '0')
 	nmap('gs', '^')
 	nmap('ge', 'G')
+end
+
+KeymapLoader.load = function ()
+	unload_vim_keymap()
+	load_helix_keymap()
 end
 
 return KeymapLoader

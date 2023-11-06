@@ -16,7 +16,7 @@
 | --------------------------- | ------- | --------------------------------------------------------------------------- |
 | `scrolloff`                 | Yes     |                                                                             |
 | `mouse`                     | Yes     | Need testing                                                                |
-| `middle-click-paste`        | No      |                                                                             |
+| `middle-click-paste`        | No      | Works with mouse configuration                                              |
 | `scroll-lines`              | No      |                                                                             |
 | `shell`                     | No      |                                                                             |
 | `line-number`               | Yes     | Gitsign at the wrong position                                               |
@@ -26,7 +26,7 @@
 | `auto-completion`           | No      |                                                                             |
 | `auto-format`               | No      |                                                                             |
 | `auto-save`                 | No      |                                                                             |
-| `idle-timeout`              | No      |                                                                             |
+| `idle-timeout`              | Yes     |                                                                             |
 | `preview-completion-insert` | No      |                                                                             |
 | `completion-trigger-len`    | No      |                                                                             |
 | `completion-replace`        | No      |                                                                             |
@@ -39,7 +39,7 @@
 | `text-width`                | No      |                                                                             |
 | `workspace-lsp-roots`       | No      |                                                                             |
 | `default-line-ending`       | No      |                                                                             |
-| `insert-final-newline`      | No      | Always true                                                                             |
+| `insert-final-newline`      | No      | Always true                                                                 |
 
 #### Soft-wrap section
 
