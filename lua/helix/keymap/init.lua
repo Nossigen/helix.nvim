@@ -17,6 +17,7 @@ local unload_vim_keymap = function ()
 		vim.api.nvim_buf_del_keymap(0, 'n', data.lhs)
 	end
 end
+
 local function load_helix_keymap()
 	-- Normal
 	local xmap = function (mapping, action)
@@ -33,6 +34,9 @@ local function load_helix_keymap()
 	xmap('<C-c>', helix.cmd.toggle_comments)
 
 	nmap('<leader>fF', helix.cmd.file_picker_in_current_directory)
+	nmap('<leader>fs', helix.cmd.symbol_picker)
+	nmap('<leader>fS', helix.cmd.workspace_symbol_picker)
+	-- nmap('<leader>ff', helix.cmd.file_picker)
 
 	nmap('<', 'v<')
 	nmap('>', 'v>')
